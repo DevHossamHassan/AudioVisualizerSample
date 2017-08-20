@@ -11,6 +11,8 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.letsgotoperfection.audiovisualizerview.utils.RandomGenerator;
+
 /**
  * @author hossam.
  */
@@ -99,13 +101,13 @@ public class AudioVisualizerView extends View {
         xWaveStart = waveSize;
         for (int i = 0; i < WAVES; i++) {
             xWaveStart += xQuarterWaveSize;
-            path.lineTo(xWaveStart, 0);
+            path.lineTo(xWaveStart, RandomGenerator.generateNumbersBetween(0f, h));
             xWaveStart += xQuarterWaveSize;
-            path.lineTo(xWaveStart, h / 2);
+            path.lineTo(xWaveStart, RandomGenerator.generateNumbersBetween(0f, h));
             xWaveStart += xQuarterWaveSize;
-            path.lineTo(xWaveStart, h);
+            path.lineTo(xWaveStart, RandomGenerator.generateNumbersBetween(0f, h));
             xWaveStart += xQuarterWaveSize;
-            path.lineTo(xWaveStart, h / 2);
+            path.lineTo(xWaveStart, RandomGenerator.generateNumbersBetween(0f, h));
         }
 
     }
