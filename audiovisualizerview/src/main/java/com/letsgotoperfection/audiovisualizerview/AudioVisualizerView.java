@@ -76,7 +76,7 @@ public class AudioVisualizerView extends View {
                 .AudioVisualizerView);
         int wave1Color = attributes.getColor(R.styleable.AudioVisualizerView_Wave1_color,
                 Color.GREEN);
-        paint.setColor(Color.GREEN);
+        paint.setColor(wave1Color);
 
 
         attributes.recycle();
@@ -116,6 +116,13 @@ public class AudioVisualizerView extends View {
     protected void onDraw(Canvas canvas) {
         drawWave();
         canvas.drawPath(path, paint);
+        paint.setColor(Color.RED);
+        drawWave();
+        canvas.drawPath(path, paint);
+        paint.setColor(Color.BLUE);
+        drawWave();
+        canvas.drawPath(path, paint);
+
         super.onDraw(canvas);
     }
 }
